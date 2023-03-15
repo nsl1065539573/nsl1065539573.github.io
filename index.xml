@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>小破站</title>
+    <link>https://examplesite.com/</link>
+    <description>Recent content on 小破站</description>
+    <image>
+      <title>小破站</title>
+      <url>https://examplesite.com/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://examplesite.com/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Wed, 15 Mar 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://examplesite.com/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>about</title>
+      <link>https://examplesite.com/about/</link>
+      <pubDate>Wed, 15 Mar 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://examplesite.com/about/</guid>
+      <description>因为云服务器太贵咯，使用github page搞一个静态的博客~
+搭建博客相关 采用hugo+PaperMod作为博客框架及样式，以下为链接，跟着教程走基本就能搞个简单的出来，至于个性化配置需要自己去配置列表里摸索了。
+构建推荐hugo -F --cleanDestinationDir
+hugo地址 PaperMod 中文PaperMod特性页 </description>
+    </item>
+    
+    <item>
+      <title>hello world</title>
+      <link>https://examplesite.com/posts/hello_world/</link>
+      <pubDate>Wed, 15 Mar 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://examplesite.com/posts/hello_world/</guid>
+      <description>hello world~ </description>
+    </item>
+    
+    
+    
+  </channel>
+</rss>
