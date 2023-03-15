@@ -6,8 +6,8 @@
     <description>Recent content on 小破站</description>
     <image>
       <title>小破站</title>
-      <url>https://nsl1065539573.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
-      <link>https://nsl1065539573.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+      <url>https://nsl1065539573.github.io/papermod-cover.png</url>
+      <link>https://nsl1065539573.github.io/papermod-cover.png</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Wed, 15 Mar 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://nsl1065539573.github.io/index.xml" rel="self" type="application/rss+xml" />
@@ -20,7 +20,7 @@
       <description>因为云服务器太贵咯，使用github page搞一个静态的博客~
 搭建博客相关 采用hugo+PaperMod作为博客框架及样式，以下为链接，跟着教程走基本就能搞个简单的出来，至于个性化配置需要自己去配置列表里摸索了。
 构建推荐hugo -F --cleanDestinationDir
-hugo地址 PaperMod 中文PaperMod特性页 </description>
+hugo地址 PaperMod 中文PaperMod特性页 markdown语法 </description>
     </item>
     
     <item>
