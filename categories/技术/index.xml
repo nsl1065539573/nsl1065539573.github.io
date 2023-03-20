@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>Posts on 小破站</title>
-    <link>https://nsl1065539573.github.io/posts/</link>
-    <description>Recent content in Posts on 小破站</description>
+    <title>技术 on 小破站</title>
+    <link>https://nsl1065539573.github.io/categories/%E6%8A%80%E6%9C%AF/</link>
+    <description>Recent content in 技术 on 小破站</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Mon, 20 Mar 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://nsl1065539573.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 20 Mar 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://nsl1065539573.github.io/categories/%E6%8A%80%E6%9C%AF/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>quick sort</title>
       <link>https://nsl1065539573.github.io/posts/quick_sort/</link>
@@ -15,15 +15,6 @@
       <description>快速排序 定义 快速排序是一种基于分治思想的排序算法，其基本思路是选择一个元素作为基准值，将待排序的序列分成两部分，一部分所有元素都比基准值小，另一部分所有元素都比基准值大，然后对这两部分分别进行递归排序，最终得到有序序列。其时间复杂度为O(nlogn)。
 算法流程 定义 l = 当前集合范围的左侧下标，定义 r = 当前集合范围的右侧下标，定义基准数 X = arr[l] 从右向左遍历，当l &amp;lt; r &amp;amp;&amp;amp; arr[r] &amp;gt; X，右下标向左移动 直到退出上述循环，将左下标处的值赋值为右下标的值，即：arr[l] = arr[r] 从左向右遍历，当l &amp;lt; r &amp;amp;&amp;amp; arr[l] &amp;lt;= X，左下标向右移动 直到退出上述循环，将右下标处的值赋值为左下标的值，即：arr[r] = arr[l] 当 l &amp;lt; r时，循环1-5步骤，当循环结束时，l下标左侧的元素都小于基准数，l下标右侧的元素都大于基准数 递归左侧序列与右侧序列，重复1-6步骤，当结束递归时，整个序列即为升序序列。 降序序列只需要将第二步与第四步的判断取反即可
 图解 代码 public static void sort(int[] arr) { if (arr == null || arr.length &amp;lt; 2) { return; } sort(arr, 0, arr.length - 1); } public static void sort(int[] arr, int left, int right) { if (left &amp;gt;= right) { return; } int l = left; int r = right; int k = arr[l]; while (l &amp;lt; r) { while (l &amp;lt; r &amp;amp;&amp;amp; arr[r] &amp;gt; k) { r--; } arr[l] = arr[r]; while (l &amp;lt; r &amp;amp;&amp;amp; arr[l] &amp;lt;= k) { l++; } arr[r] = arr[l]; } arr[l] = k; sort(arr, left, l - 1); sort(arr, l + 1, right); } </description>
-    </item>
-    
-    <item>
-      <title>hello world</title>
-      <link>https://nsl1065539573.github.io/posts/hello_world/</link>
-      <pubDate>Wed, 15 Mar 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://nsl1065539573.github.io/posts/hello_world/</guid>
-      <description>hello world~ </description>
     </item>
     
   </channel>
