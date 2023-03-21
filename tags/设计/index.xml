@@ -5,11 +5,11 @@
     <link>https://nsl1065539573.github.io/tags/%E8%AE%BE%E8%AE%A1/</link>
     <description>Recent content in 设计 on 小破站</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Mon, 20 Mar 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://nsl1065539573.github.io/tags/%E8%AE%BE%E8%AE%A1/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 21 Mar 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://nsl1065539573.github.io/tags/%E8%AE%BE%E8%AE%A1/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>级联菜单的后端设计</title>
       <link>https://nsl1065539573.github.io/posts/nested_sets/</link>
-      <pubDate>Mon, 20 Mar 2023 00:00:00 +0000</pubDate>
+      <pubDate>Tue, 21 Mar 2023 00:00:00 +0000</pubDate>
       
       <guid>https://nsl1065539573.github.io/posts/nested_sets/</guid>
       <description>多级菜单的后端设计 多级菜单在日常前端页面中有较多应用，如商城顶部分类导航栏以及省市区三级菜单联动等。此文章将从后端角度来考虑商城顶部分类的多级联动菜单的设计。
