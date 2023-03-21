@@ -18,6 +18,26 @@
     </item>
     
     <item>
+      <title>级联菜单的后端设计</title>
+      <link>https://nsl1065539573.github.io/posts/nested_sets/</link>
+      <pubDate>Mon, 20 Mar 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://nsl1065539573.github.io/posts/nested_sets/</guid>
+      <description>多级菜单的后端设计 多级菜单在日常前端页面中有较多应用，如商城顶部分类导航栏以及省市区三级菜单联动等。此文章将从后端角度来考虑商城顶部分类的多级联动菜单的设计。
+后端层面的设计需要考虑多级菜单在后端代码中的表现形式以及在数据库中的存储格式，以及如何进行从数据库到后端的数据转换，接下来将阐释我的设计思路。
+方式一 后端数据结构 考虑到多级菜单是单向的从上到下的一个结构，比较类似N叉树，所以采用N叉树来表示菜单信息。表示出来如下图：
+第一行表示分类id 第二行表示分类名称 第三行表示父分类id 代码
+@Data public class TreeNode { private String data; // 此节点菜单名称 private List&amp;lt;TreeNode&amp;gt; children; } 数据库设计 数据库方面我们选用mysql来存储表单信息。由于mysql是一种关系型数据库，存储的记录是基于行的，所以我们需要将N叉树展开存储，可以使用邻接表来进行存储。
+邻接表可以表示当前节点与与哪些节点相连，我们可以选择存储当前节点的子节点列表或者存储当前节点的父节点。此处我们选择存储当前节点的父节点，因为子节点不确定有多少个，而有向的树结构可以确定一个节点一定只有一个或多个子节点。
+create table test_category ( ID INT(3) AUTO_INCREMENT PRIMARY KEY, NAME VARCHAR(20) NOT NULL COMMENT &amp;#39;类别名&amp;#39;, PARENT_ID INT(3) COMMENT &amp;#39;父类别ID，当是最高层级是为null&amp;#39; ); 数据库转为后端对象 数据存储在数据库中，而我们代码要操作则要将其构建为便于理解的类型：N叉树。
+在分类数较少的情况下，我们可以将数据表中的所有数据查询出来，在后端代码中进行转换，将邻接表转换为N叉树。
+public TreeNode convertToNTree (List&amp;lt;Record&amp;gt; recordList) { // 省略转化步骤 ... } 优缺点 优点 结构较为简单，且增加、修改类目时较为简单。比如要在服装类目下新增一个子类：鞋子，那么只需要新建一条记录，将PARENT_I赋值为服装的ID即可。修改时修改对应类目的NAME以及PARENT_ID即可。
+缺点 查询某个节点下的子节点时会有些力不从心。如果我们不是每次查询所有，而是只单独查询服装类目以及其下的子类目，那么我们需要递归查询服装类目的子类目以及其子类目的子类目&amp;hellip;,当层次较深以及结构较多时，比如公司的员工信息管理，员工的职级层级可能会比较深，且员工数量较多，这种设计方法的效率就亟待优化了。
+方式二 结构改动 方式一可以较为简便地实现一个多级菜单后端结构，但是对于层级结构复杂以及数据库内容增多时，或者要根据某个层级查询下层以及孙子层等方面的需求显得不是那么适用：
+条目增多时，查询所有记录并转换这个方法会占用较多内存以及耗时； 如果要查询某个节点的子节点以及孙子节点，需要递归进行查询。 要解决上述问题，可以给每个节点加两个“锚点”。</description>
+    </item>
+    
+    <item>
       <title>hello world</title>
       <link>https://nsl1065539573.github.io/posts/hello_world/</link>
       <pubDate>Wed, 15 Mar 2023 00:00:00 +0000</pubDate>
