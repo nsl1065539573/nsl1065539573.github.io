@@ -44,7 +44,6 @@
     {{- if not (.Param "disableAnchoredHeadings") }}
     {{- partial "anchored_headings.html" .Content -}}
     {{- else }}{{ .Content }}{{ end }}
-    {{ partial "comments.html" . }}
   </div>
   {{- end }}
 
@@ -66,6 +65,7 @@
   {{- if (.Param "comments") }}
   {{- partial "comments.html" . }}
   {{- end }}
+  {{ partial "comments.html" . }}
 </article>
 
 {{- end }}{{/* end main */}}
