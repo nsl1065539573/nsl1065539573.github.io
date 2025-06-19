@@ -1,5 +1,12 @@
 {{- if not (.Param "hideFooter") }}
 <footer class="footer">
+    <script src="https://utteranc.es/client.js"
+        repo="nsl1065539573/nsl1065539573.github.io"
+        issue-term="pathname"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+    </script>
     {{- if not site.Params.footer.hideCopyright }}
         {{- if site.Copyright }}
         <span>{{ site.Copyright | markdownify }}</span>

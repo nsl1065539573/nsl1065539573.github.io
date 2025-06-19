@@ -1,7 +1,14 @@
 {{- define "main" }}
 
 <article class="post-single">
-  <header class="post-header">
+      <header class="post-header">
+    <script src="https://utteranc.es/client.js"
+        repo="nsl1065539573/nsl1065539573.github.io"
+        issue-term="pathname"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script>
     {{ partial "breadcrumbs.html" . }}
     <h1 class="post-title entry-hint-parent">
       {{ .Title }}
@@ -65,7 +72,6 @@
   {{- if (.Param "comments") }}
   {{- partial "comments.html" . }}
   {{- end }}
-  {{ partial "comments.html" . }}
 </article>
 
 {{- end }}{{/* end main */}}
