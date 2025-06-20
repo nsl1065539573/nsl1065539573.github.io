@@ -27,7 +27,7 @@ categories = ['技术']
 1. 继承ClassLoader，重写loadClass方法，完全打破双亲委派
 2. 重写findClass方法，仍然会尝试先由父类加载
 3. 通过`Thread Context ClassLoader`获取类加载器进行加载，通常与SPI联合使用
-```
+```java
 // java.sql.DriverManager
 public class DriverManager {
     private static void loadInitialDrivers() {

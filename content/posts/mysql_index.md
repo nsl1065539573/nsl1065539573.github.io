@@ -95,7 +95,7 @@ SELECT * FROM table WHERE a = 1 AND b LIKE '%abc%';
 
 #### 示例
 新建一个表
-```
+```sql
 CREATE TABLE `user_test` (
   `id` int NOT NULL,
   `name` varchar(100) DEFAULT NULL,
@@ -106,7 +106,7 @@ CREATE TABLE `user_test` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 ```
 插入两万条数据之后，跑如下sql：
-```
+```sql
 mysql> EXPLAIN SELECT * FROM user_test FORCE INDEX (idx_name_age) WHERE name LIKE 'Tom%' AND age = 25;
 +----+-------------+-----------+------------+-------+---------------+--------------+---------+------+------+----------+-----------------------+
 | id | select_type | table     | partitions | type  | possible_keys | key          | key_len | ref  | rows | filtered | Extra                 |
