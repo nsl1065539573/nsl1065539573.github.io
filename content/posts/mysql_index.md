@@ -1,7 +1,7 @@
 +++
 date = '2025-06-19T16:21:14+08:00'
 draft = false
-title = 'Mysql_index'
+title = 'mysql索引'
 tags = ['mysql']
 categories = ['技术']
 +++
@@ -92,3 +92,27 @@ SELECT * FROM table WHERE a = 1 AND b LIKE '%abc%';
 1. 没有触发覆盖索引
 2. where条件触发索引列的筛选条件
 3. 仅适用于二级索引
+
+#### 示例
+新建一个表
+```
+CREATE TABLE `user_test` (
+  `id` int NOT NULL,
+  `name` varchar(100) DEFAULT NULL,
+  `age` int DEFAULT NULL,
+  `email` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `idx_name_age` (`name`,`age`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+```
+插入两万条数据之后，跑如下sql：
+```
+mysql> EXPLAIN SELECT * FROM user_test FORCE INDEX (idx_name_age) WHERE name LIKE 'Tom%' AND age = 25;
++----+-------------+-----------+------------+-------+---------------+--------------+---------+------+------+----------+-----------------------+
+| id | select_type | table     | partitions | type  | possible_keys | key          | key_len | ref  | rows | filtered | Extra                 |
++----+-------------+-----------+------------+-------+---------------+--------------+---------+------+------+----------+-----------------------+
+|  1 | SIMPLE      | user_test | NULL       | range | idx_name_age  | idx_name_age | 408     | NULL |    1 |    10.00 | Using index condition |
++----+-------------+-----------+------------+-------+---------------+--------------+---------+------+------+----------+-----------------------+
+1 row in set, 1 warning (0.00 sec)
+```
+可以看到，虽然对联合索引的左列使用了模糊查询，但是仍然可以在索引里对符合`name LIKE 'Tom%'`的列进行age字段的筛选
